@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>InAppWebView Example</title>
+  <script type="text/javascript">
+    function callInAppFunction(link) {
+      // "messageHandlers": App에 등록할 handlerName
+      // "goToExternalWebBrowser": App에 등록할 bridgeName(Key)
+      webkit.messageHandlers.goToExternalWebBrowser.postMessage(link);
+    }
+  </script>
+</head>
+<body>
+  <h1>InAppWebView Example</h1>
+  <button  onclick="callInAppFunction('https://www.naver.com/')">함수 호출</button>
+</body>
+</html>
