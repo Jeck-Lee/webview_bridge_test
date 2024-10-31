@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>InAppWebView Example</title>
+  <script type="text/javascript">
+    function callGoToLoginFunction() {
+      // "flutter_inappwebview": Flutter 앱에서 사용하는 웹뷰 패키지에 따라 달라질 수 있음
+      // "goToLoginScreen": App에 등록할 bridgeName(Key)
+      window.flutter_inappwebview.callHandler('goToLoginScreen');
+    }
+    function callGoToExternalWebBrowserFunction(link) {
+      window.flutter_inappwebview.callHandler('goToExternalWebBrowser', link);
+    }
+    function callAppLogoutFunction() {
+      window.flutter_inappwebview.callHandler('callAppLogoutFunction');
+    }
+  </script>
+</head>
+<body>
+  <h1>InAppWebView Example</h1>
+  <button  onclick="callGoToLoginFunction()">로그인 화면으로 이동</button>
+  <button  onclick="callGoToExternalWebBrowserFunction('https://www.naver.com/')">외부 웹브라우저로 이동</button>
+  <button  onclick="callAppLogoutFunction()">로그아웃</button>
+</body>
+</html>
